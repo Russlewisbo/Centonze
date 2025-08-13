@@ -156,7 +156,7 @@ plotdata(bal_anti1, two.by.two = TRUE)
 bal_noantifungal <- metadiag(bal_anti0, two.by.two = TRUE, re = "normal", re.model = "DS",
                                link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
                                nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
-bal_antifungal <- metadiag(bal_anti0, two.by.two = TRUE, re = "normal", re.model = "DS",
+bal_antifungal <- metadiag(bal_anti1, two.by.two = TRUE, re = "normal", re.model = "DS",
                              link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
                              nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
 

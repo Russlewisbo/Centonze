@@ -1,0 +1,49 @@
+TP,FP,FN,TN,author,year,design,patients,serum,antifungal,cutoff
+20,2,15,113,"Ardi P, Daie-Ghazvini R, Hashemi SJ et al",2020,0,150,1,1,1
+5,4,5,38,"Acosta J, Catalan M, del Palacio-Peréz-Medel A et al",2011,1,51,1,3,0.5
+17,2,24,226,"Aerts R, Mercier T, Houben E, Schauwvlieghe A, Lagrou K, Maertens J",2022,1,269,1,0,0.5
+21,0,7,143,"Alhan O, Saba R, Akalin EH et al",2023,1,171,1,3,0.5
+16,0,5,70,"Alhan O, Saba R, Akalin EH et al",2023,1,91,1,0,0.5
+51,116,2,380,"Barnes RA, Stocking K, Bowden S, Poynton MH, White PL",2013,1,549,1,1,0.5
+6,10,7,137,"Becker MJ, Lugtenburg EJ, Cornelissen JJ, Van Der Schee C, Hoogsteden HC, De Marie S",2003,1,160,1,1,1
+7,0,30,62,"Boch T, Spiess B, Cornely OA et al",2016,1,99,1,3,0.5
+18,3,4,16,"Bretagne S, Costa JM, Bart-Delabesse E, Dhédin N, Rieux C, Cordonnier C",1998,1,41,1,0,1
+11,7,16,59,"Cai X, Ni W, Wei C, Cui J",2014,1,93,1,0,0.5
+5,17,0,99,"Duarte RF, Sánchez-Ortega I, Cuesta I et al",2014,1,121,1,1,0.5
+5,0,11,37,"Eigl S, Hoenigl M, Spiess B et al",2017,1,53,1,3,0.5
+8,0,14,60,"Hachem RY, Kontoyiannis DP, Chemaly RF, Jiang Y, Reitzel R, Raad I",2009,1,82,1,1,0.5
+56,31,2,146,"Hadrich I, Makni F, Cheikhrouhou F et al",2012,1,235,1,1,0.5
+28,23,13,165,"Hasseine L, Cassaing S, Robert-Gangneux F et al",2015,1,229,1,0,0.5
+45,33,108,611,"Herbrecht R, Letscher-Bru V, Oprea C et al",2002,1,797,1,0,1.5
+28,11,1,64,"Maertens J, Theunissen K, Verbeken E et al",2004,1,104,1,1,0.5
+17,1,1,81,"Maertens J, Van Eldere J, Verhaegen J, Verbeken E, Verschakelen J, Boogaerts M",2002,1,100,1,1,1
+25,2,2,42,"Maertens J, Verhaegen J, Demuynck H et al",1999,1,71,1,0,1
+27,1,10,153,"Maertens J, Verhaegen J, Lagrou K, Van Eldere J, Boogaerts M",2001,1,191,1,1,1
+14,3,20,73,"Meersseman W, Lagrou K, Maertens J et al",2008,1,110,1,3,0.5
+9,38,9,303,"Park SY, Lee S-O, Choi S-H et al",2010,1,359,1,1,0.5
+5,0,2,67,"Rovira M, Jimenéz M, De La Bellacasa JP et al",2004,1,74,1,3,1.5
+15,7,0,19,"Salem EH, Elbrolosy AM, Awad SM et al",2019,1,40,1,3,0.5
+34,5,35,142,"Sulahian A, Porcher R, Bergeron A et al",2014,1,216,1,0,0.5
+14,11,23,72,"Zhou W, Li H, Zhang Y et al",2017,1,120,1,3,0.5
+28,5,5,58,"Sun A-n, Wang J, Wu DP, Chen S-n",2007,1,96,1,3,0.5
+6,1,20,7,"Boch T, Buchheidt D, Spiess B, Miethke T, Hofmann W-K, Reinwald M",2016,0,34,1,3,0.5
+9,10,2,267,"Calmettes C, Gabriel F, Blanchard E et al",2018,0,288,1,1,0.5
+38,24,2,38,"Cefalo M, Puxeddu E, Sarmati L et al",2019,0,102,1,3,0.5
+15,105,4,252,"Chun JY, Jeong S-J, Kim S et al",2024,0,624,1,1,0.5
+22,2,26,154,"Dichtl K, Seybold U, Ormanns S, Horns H, Wagener J",2019,0,204,1,3,0.5
+20,11,1,14,"Fontana C, Gaziano R, Favaro M, Casalinuovo I, Pistoia E, Di Francesco P",2012,0,46,1,3,0.5
+22,19,6,75,"Hoenigl M, Egger M, Boyer J, Schulz E, Prattes J, Jenks JD",2021,0,122,1,3,0.5
+40,111,11,779,"Imbert S, Gauthier L, Joly I et al",2016,0,941,1,3,0.5
+17,0,6,214,"Keche A, Patil G, Ganga RT, Sahu D",2024,0,236,1,3,0.5
+23,7,1,105,"Kim R, Koh Y, Shin D-Y et al",2017,0,136,1,1,0.8
+5,11,8,25,"Lahmer T, Neuenhahn M, Held J, Rasch S, Schmid RM, Huber W",2016,0,49,1,3,0.5
+7,4,5,129,"Luong M-L, Filion C, Labbé A-C et al",2010,0,145,1,3,0.5
+32,14,81,188,"Marr KA, Balajee SA, McLaughlin L, Tabouret M, Bentsen C, Walsh TJ",2004,0,315,1,0,0.5
+11,12,11,245,"Marr KA, Balajee SA, McLaughlin L, Tabouret M, Bentsen C, Walsh TJ",2004,0,131,1,1,0.5
+41,14,5,161,"Marr KA, Laverdiere M, Gugel A, Leisenring W",2005,0,222,1,0,0.5
+16,9,11,94,"Marr KA, Laverdiere M, Gugel A, Leisenring W",2005,0,131,1,1,0.5
+17,0,11,202,"Racil Z, Kocmanova I, Toskova M et al",2011,0,230,1,0,0.5
+5,2,9,116,"Rose SR, Vallabhajosyula S, Velez MG et al",2014,0,132,1,1,0.5
+4,0,4,85,"Siopi M, Karakatsanis S, Roumpakis C et al",2021,0,93,1,3,0.5
+4,31,0,111,"Vena A, Bouza E, Álvarez-Uría A et al",2017,0,146,1,1,0.5
+22,2,9,98,"White PL, Price JS, Posso R, Vale L, Backx M",2020,0,131,1,3,0.5
