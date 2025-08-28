@@ -6,14 +6,14 @@ library (readr)
 library(meta)
 
 # Read your data
-bal_data <- read.csv("bal.csv")
+serum_data <- read.csv("serum.csv")
 
 # Check the structure of your data
-str(bal_data)
-head(bal_data)
+str(serum_data)
+head(serum_data)
 
 # Create study labels by combining author and year
-study_labels <- paste0(bal_data$author, " (", bal_data$year, ")")
+study_labels <- paste0(serum_data$author, " (", serum_data$year, ")")
 
 # Display the labels to verify they look correct
 print(study_labels)
@@ -23,8 +23,8 @@ print(study_labels)
 
 # Calculate events and totals for sensitivity
 # Sensitivity = TP / (TP + FN)
-sens_events <- bal_data$TP
-sens_total <- bal_data$TP + bal_data$FN
+sens_events <- serum_data$TP
+sens_total <- serum_data$TP + serum_data$FN
 
 # Create meta-analysis object for sensitivity
 sens_meta <- metaprop(event = sens_events,
@@ -82,8 +82,8 @@ forest(sens_meta,
 
 # Calculate events and totals for specificity
 # Specificity = TN / (TN + FP)
-spec_events <- bal_data$TN
-spec_total <- bal_data$TN + serum_data$FP
+spec_events <- serum_data$TN
+spec_total <- serum_data$TN + serum_data$FP
 
 # Create meta-analysis object for specificity
 spec_meta <- metaprop(event = spec_events,
@@ -134,25 +134,91 @@ forest(spec_meta,
        print.tau2 = FALSE,
        cex = 0.7,
        cex.studlab = 0.6,
-       fontsize = 10)                                                                                                  
+       fontsize = 10)
 
-## ggplot workaround-bal- design
+# CREATE COMBINED PLOT (OPTIONAL)
+# ================================
+
+# Create both plots side by side
+par(mfrow = c(1, 2))
+
+forest(sens_meta,
+       sortvar = -TE,
+       xlab = "Sensitivity",
+       smlab = "",
+       leftcols = "studlab",
+       leftlabs = "Study",
+       rightcols = c("effect", "ci"),
+       rightlabs = c("Sens.", "95% CI"),
+       xlim = c(0, 1),
+       col.diamond = "blue",
+       col.diamond.lines = "blue",
+       print.I2 = FALSE,
+       print.tau2 = FALSE,
+       cex = 0.5,
+       cex.studlab = 0.4)
+
+forest(spec_meta,
+       sortvar = -TE,
+       xlab = "Specificity",
+       smlab = "",
+       leftcols = "studlab",
+       leftlabs = "Study",
+       rightcols = c("effect", "ci"),
+       rightlabs = c("Spec.", "95% CI"),
+       xlim = c(0, 1),
+       col.diamond = "red",
+       col.diamond.lines = "red",
+       print.I2 = FALSE,
+       print.tau2 = FALSE,
+       cex = 0.5,
+       cex.studlab = 0.4)
+
+par(mfrow = c(1, 1))  # Reset to single plot
+
+# EXPORT RESULTS TO TABLE
+# ========================
+
+# Create a comprehensive results table
+results_table <- data.frame(
+  Study = study_labels,
+  TP = serum_data$TP,
+  FP = serum_data$FP,
+  FN = serum_data$FN,
+  TN = serum_data$TN,
+  Sensitivity = round(sens_events / sens_total, 3),
+  Sens_Lower_CI = round(sens_meta$lower, 3),
+  Sens_Upper_CI = round(sens_meta$upper, 3),
+  Specificity = round(spec_events / spec_total, 3),
+  Spec_Lower_CI = round(spec_meta$lower, 3),
+  Spec_Upper_CI = round(spec_meta$upper, 3)
+)
+
+# View the results
+View(results_table)
+
+# Save to CSV
+write.csv(results_table, "forest_plot_results.csv", row.names = FALSE)
+
+# Print first few rows
+head(results_table)
+## ggplot workaround-serum- design
 
 library(ggplot2)
 library(dplyr)
 
 # Extract data from the bamdit object
 # First, check what's in your serum object
-str(bal)  # This will show available components
+str(serum)  # This will show available components
 
 # Typical extraction (adjust based on your actual data structure)
 # Method 1: If serum has TP, FP, TN, FN columns
 plot_data <- data.frame(
-  TP = serum$TP,
-  FP = serum$FP,
-  TN = serum$TN,
-  FN = serum$FN,
-  design = serum$design
+  TP = serum_data$TP,
+  FP = serum_data$FP,
+  TN = serum_data$TN,
+  FN = serum_data$FN,
+  design = serum_data$design
 )
 
 # Calculate sensitivity and specificity
@@ -192,15 +258,15 @@ library(dplyr)
 
 # Extract data from the bamdit object
 # First, check what's in your serum object
-str(bal_data)  # This will show available components
+str(serum)  # This will show available components
 
 # Typical extraction (adjust column names based on your actual data)
 plot_data <- data.frame(
-  TP = bal_data$TP,
-  FP = bal_data$FP,
-  TN = bal_data$TN,
-  FN = bal_data$FN,
-  antifungal = bal_data$antifungal  # or serum$antifungal_category, serum$drug, etc.
+  TP = serum$TP,
+  FP = serum$FP,
+  TN = serum$TN,
+  FN = serum$FN,
+  antifungal = serum$antifungal  # or serum$antifungal_category, serum$drug, etc.
 )
 
 # Calculate sensitivity and specificity
@@ -210,13 +276,6 @@ plot_data <- plot_data %>%
     specificity = TN / (TN + FP),
     FPR = 1 - specificity  # False positive rate
   )
-
-plot_data$antifungal <- factor(plot_data$antifungal,
-                               levels = c(0, 1, 2, 3),
-                               labels = c("No antifungal", 
-                                          "Prophylaxis", 
-                                          "Treatment", 
-                                          "Both"))
 
 # Create the grouped plot by antifungal category
 ggplot(plot_data, aes(x = FPR, y = sensitivity, color = antifungal, shape = antifungal)) +
@@ -242,56 +301,45 @@ ggplot(plot_data, aes(x = FPR, y = sensitivity, color = antifungal, shape = anti
 library (bamdit)
 library (R2jags)
 
-bal_anti0 <- bal_data %>%
+serum_anti0 <- serum %>%
   filter(antifungal == "0")
 
-bal_anti1 <- bal_data %>%
+serum_anti1 <- serum %>%
   filter(antifungal == "1")
 
-bal_anti_b <- bal_data %>%
+serum_anti_b <- serum %>%
   filter(antifungal == 1 | antifungal == 3)
 
-plotdata(bal_data, two.by.two = TRUE)
+plotdata(serum_anti0, two.by.two = TRUE)
 
-plotdata(bal_anti0, two.by.two = TRUE)
+plotdata(serum_anti_b, two.by.two = TRUE)
 
-plotdata(bal_anti_b, two.by.two = TRUE)
+plotdata(serum_anti1, two.by.two = TRUE)
 
-plotdata(bal_anti1, two.by.two = TRUE)
-
-bal_all <- metadiag(bal_data, two.by.two = TRUE, re = "normal", re.model = "DS",
-                             link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
-                             nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
-
-bal_noantifungal <- metadiag(bal_anti0, two.by.two = TRUE, re = "normal", re.model = "DS",
+serum_noantifungal <- metadiag(serum_anti0, two.by.two = TRUE, re = "normal", re.model = "DS",
+                     link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
+                     nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
+serum_antifungal <- metadiag(serum_anti0, two.by.two = TRUE, re = "normal", re.model = "DS",
                                link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
                                nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
-bal_antifungal <- metadiag(bal_anti1, two.by.two = TRUE, re = "normal", re.model = "DS",
+
+serum_antifungalb <- metadiag(serum_anti_b, two.by.two = TRUE, re = "normal", re.model = "DS",
                              link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
                              nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
 
-bal_antifungalb <- metadiag(bal_anti_b, two.by.two = TRUE, re = "normal", re.model = "DS",
-                              link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
-                              nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
-
-plot(bal_all, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
-plot(bal_noantifungal, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
-plot(bal_antifungal, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
-plot(bal_antifungalb, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
-plotsesp(bal_all)
-plotsesp(bal_noantifungal)
-plotsesp(bal_antifungalb)
-plotsesp(bal_antifungal)
-bsroc(bal_all, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
+plot(serum_noantifungal, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
+plot(serum_antifungal, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
+plot(serum_antifungalb, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
+plotsesp(serum_noantifungal)
+plotsesp(serum_antifungalb)
+plotsesp(serum_antifungal)
+bsroc(serum_noantifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
       fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
       partial.AUC = FALSE)
-bsroc(bal_noantifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
+bsroc(serum_antifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
       fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
       partial.AUC = FALSE)
-bsroc(bal_antifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
-      fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
-      partial.AUC = FALSE)
-bsroc(bal_antifungalb, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
+bsroc(serum_antifungalb, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
       fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
       partial.AUC = FALSE)
 
@@ -319,4 +367,5 @@ bsroc(serum_noantifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
 bsroc(serum_antifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
       fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
       partial.AUC = FALSE)
+
 

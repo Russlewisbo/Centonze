@@ -1,51 +1,49 @@
 TP,FP,FN,TN,author,year,design,patients,bal,antifungal,cutoff
-7,3,2,39,"Acosta J, Catalan M, del Palacio-Peréz-Medel A et al",2011,1,51,1,3,0.5
-37,11,4,217,"Aerts R, Mercier T, Houben E, Schauwvlieghe A, Lagrou K, Maertens J",2022,1,269,1,0,0.5
-25,129,26,350,"Affolter K, Tamm M, Jahn K et al",2014,1,530,1,3,0.5
-17,0,3,60,"Becker MJ, Lugtenburg EJ, Cornelissen JJ, Van Der Schee C, Hoogsteden HC, De Marie S",2003,1,80,1,1,1
-16,2,21,60,"Boch T, Spiess B, Cornely OA et al",2016,1,99,1,3,0.5
-6,11,2,87,"Castillo CG, Kauffman CA, Zhai J, Jiang H, Agozino SM, Miceli MH",2018,1,106,1,3,0.5
-39,3,4,69,"Egger M, Penziner S, Dichtl K et al",2022,1,115,1,3,1
-42,35,1,37,"Egger M, Penziner S, Dichtl K et al",2022,1,115,1,3,1
-6,3,10,34,"Eigl S, Hoenigl M, Spiess B et al",2017,1,53,1,3,0.5
-38,10,7,49,"El-Mahallawy HA, El-Gendi R, Ghaith DM, Behiry IK, Helal SF",2021,1,104,1,3,1
-39,14,1,17,"Gupta A, Capoor MR, Shende T et al",2017,1,71,1,0,0.5
-18,1,3,20,"Hadrich I, Makni F, Cheikhrouhou F et al",2012,1,42,1,1,0.5
-8,1,2,56,"Hoenigl M, Prattes J, Spiess B et al",2014,1,67,1,0,0.5
-6,0,1,4,"Hoenigl M, Prattes J, Spiess B et al",2014,1,11,1,0,0.5
-10,1,0,51,"Hsu L-Y, Ding Y, Phua J et al",2010,1,62,1,0,1
-11,23,2,46,"Jenks JD, Mehta SR, Taplitz R, Aslam S, Reed SL, Hoenigl M",2019,1,82,1,3,0.5
-8,0,1,34,"Khodavaisy S, Hedayati MT, Alialy M, Habibi MR, Badali H",2015,1,43,1,0,0.5
-23,0,2,155,"Lai G, Zeng C, Mo J, Song W-d, Xu P",2019,1,180,1,3,0.5
-8,4,12,16,"Linder KA, Kauffman CA, Miceli MH",2020,1,40,1,3,0.5
-30,10,4,66,"Meersseman W, Lagrou K, Maertens J et al",2008,1,110,1,3,0.5
-12,38,6,303,"Park SY, Lee S-O, Choi S-H et al",2010,1,359,1,1,0.5
-17,0,11,172,"Penack O, Rempf P, Graf B, Blau IW, Thiel E",2008,1,200,1,1,0.5
-30,42,1,148,"Prattes J, Flick H, Prüller F et al",2014,1,221,1,0,0.5
-49,52,4,155,"Sedik S, Boyer J, Egger M et al",2024,1,259,1,3,0.5
-16,18,2,80,"Taghizadeh-Armaki M, Hedayati MT, Moqarabzadeh V et al",2017,1,116,1,3,0.5
-62,47,71,16,"Yu Y, Zhu C, Shen H et al",2019,1,196,1,3,0.5
-28,16,9,67,"Zhou W, Li H, Zhang Y et al",2017,1,120,1,3,0.5
-9,23,2,162,"Husain S, Clancy CJ, Nguyen MH et al",2008,1,196,1,3,0.5
-7,11,1,150,"Lopes da Silva R, Ribeiro P, Abreu N et al",2010,1,169,1,0,0.5
-16,0,16,63,"Sun A-n, Wang J, Wu DP, Chen S-n",2007,1,96,1,3,1
-33,2,2,113,"Ardi P, Daie-Ghazvini R, Hashemi SJ et al",2020,0,150,1,1,1
-17,3,12,69,"Bergeron A, Belle A, Sulahian A et al",2010,0,101,1,3,0.5
-35,68,0,85,"Bernardi RM, Holler SR, Almeida EGCD, Anton C, Machado FD, Silva DR",2022,0,188,1,0,0.5
-22,1,4,7,"Boch T, Buchheidt D, Spiess B, Miethke T, Hofmann W-K, Reinwald M",2016,0,34,1,3,0.5
-13,14,1,85,"Brownback KR, Pitts LR, Simpson SQ",2013,0,113,1,3,0.5
-49,14,17,61,"Buil JB, Huygens S, Dunbar A et al",2023,0,141,1,0,0.5
-25,37,15,25,"Cefalo M, Puxeddu E, Sarmati L et al",2019,0,102,1,3,0.5
-11,8,3,81,"Chun JY, Jeong S-J, Kim S et al",2024,0,624,1,1,0.5
-55,25,4,167,"D’Haese J, Theunissen K, Vermeulen E et al",2012,0,251,1,0,0.5
-11,14,7,84,"Heng S-C, Chen SC-A, Morrissey CO et al",2014,0,116,1,3,0.5
-20,14,15,564,"Imbert S, Meyer I, Palous M et al",2018,0,613,1,3,1
-9,2,4,34,"Lahmer T, Neuenhahn M, Held J, Rasch S, Schmid RM, Huber W",2016,0,49,1,3,0.5
-12,29,0,104,"Luong M-L, Filion C, Labbé A-C et al",2010,0,145,1,3,0.5
-56,8,2,33,"Maertens J, Maertens V, Theunissen K et al",2009,0,99,1,3,0.5
-2,45,1,48,"Miceli MH, Goggins MI, Chander P et al",2015,0,96,1,3,0.5
-37,3,12,47,"Musher B, Fredricks D, Leisenring W, Balajee SA, Smith C, Marr KA",2004,0,99,1,0,0.5
-15,5,5,42,"Nguyen MH, Leather H, Clancy CJ et al",2011,0,67,1,1,0.5
-18,3,10,199,"Racil Z, Kocmanova I, Toskova M et al",2011,0,230,1,0,0.5
-10,7,4,111,"Rose SR, Vallabhajosyula S, Velez MG et al",2014,0,132,1,1,0.5
-10,62,0,111,"Zhuang Q, Ma H, Zhang Y et al",2017,0,183,1,3,0.5
+7,3,2,39,Acosta J et al.,2011,1,51,1,3,0.5
+37,11,4,217,Aerts R  et al.,2022,1,269,1,0,0.5
+25,129,26,350,Affolter K  et al.,2014,1,530,1,3,0.5
+33,2,2,113,Ardi P  et al.,2020,0,150,1,1,1
+17,0,3,60,Becker MJ  et al.,2003,1,80,1,1,1
+17,3,12,69,Bergeron A et al.,2010,0,101,1,3,0.5
+35,68,0,85,Bernardi RM et al.,2022,0,188,1,0,0.5
+22,1,4,7,Boch T et al.,2016,0,34,1,3,0.5
+16,2,21,60,Boch T et al. (a),2016,1,99,1,3,0.5
+13,14,1,85,Brownback KR et al.,2013,0,113,1,3,0.5
+49,14,17,61,Buil JB et al.,2023,0,141,1,0,0.5
+6,11,2,87,Castillo CG et al.,2018,1,106,1,3,0.5
+25,37,15,25,Cefalo M et al.,2019,0,102,1,3,0.5
+11,8,3,81,Chun JY et al.,2024,0,624,1,1,0.5
+55,25,4,167,DaHaese J et al.,2012,0,251,1,0,0.5
+39,3,4,69,Egger M et al.,2022,1,115,1,3,1
+42,35,1,37,Egger M et al. (a),2022,1,115,1,3,1
+6,3,10,34,Eigl S et al.,2017,1,53,1,3,0.5
+38,10,7,49,El-Mahallawy HA et al.,2021,1,104,1,3,1
+39,14,1,17,Gupta A et al.,2017,1,71,1,0,0.5
+18,1,3,20,Hadrich I et al.,2012,1,42,1,1,0.5
+11,14,7,84,Heng S-C et al.,2014,0,116,1,3,0.5
+8,1,2,56,Hoenigl M et al.,2014,1,67,1,0,0.5
+6,0,1,4,Hoenigl M et al. (a),2014,1,11,1,0,0.5
+10,1,0,51,Hsu L-Y et al.,2010,1,62,1,0,1
+9,23,2,162,Husain S et al.,2008,1,196,1,3,0.5
+20,14,15,564,Imbert S et al.,2018,0,613,1,3,1
+11,23,2,46,Jenks JD et al.,2019,1,82,1,3,0.5
+8,0,1,34,Khodavaisy S et al.,2015,1,43,1,0,0.5
+9,2,4,34,Lahmer T et al.,2016,0,49,1,3,0.5
+8,4,12,16,Linder KA et al.,2020,1,40,1,3,0.5
+7,11,1,150,da Silva R et al.,2010,1,169,1,0,0.5
+12,29,0,104,Luong M-L et al.,2010,0,145,1,3,0.5
+56,8,2,33,Maertens J et al.,2009,0,99,1,3,0.5
+30,10,4,66,Meersseman W et al.,2008,1,110,1,3,0.5
+2,45,1,48,Miceli MH et al.,2015,0,96,1,3,0.5
+37,3,12,47,Musher B et al.,2004,0,99,1,0,0.5
+15,5,5,42,Nguyen MH et al.,2011,0,67,1,1,0.5
+12,38,6,303,Park SY et al.,2010,1,359,1,1,0.5
+17,0,11,172,Penack O et al.,2008,1,200,1,1,0.5
+30,42,1,148,Prattes J et al.,2014,1,221,1,0,0.5
+18,3,10,199,Racil Z et al.,2011,0,230,1,0,0.5
+10,7,4,111,Rose SR et al.,2014,0,132,1,1,0.5
+49,52,4,155,Sedik S et al.,2024,1,259,1,3,0.5
+16,18,2,80,Taghizadeh-Armaki M et al.,2017,1,116,1,3,0.5
+62,47,71,16,Yu Y et al.,2019,1,196,1,3,0.5
+28,16,9,67,Zhou W et al.,2017,1,120,1,3,0.5
+10,62,0,111,Zhuang Q et al.,2017,0,183,1,3,0.5

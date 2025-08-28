@@ -1,7 +1,7 @@
 set.seed(12345)
 library (bamdit)
 library (ggplot2)
-serum <- read_csv("~/Desktop/serum.csv", col_types = cols(TP= col_integer(), 
+serum <- read_csv("serum.csv", col_types = cols(TP= col_integer(), 
                                          FP = col_integer(), FN = col_integer(), 
                                         TN = col_integer(), year = col_character(), 
                                       design = col_factor(levels = c("0", "1")), patients = col_integer(), 
@@ -11,6 +11,7 @@ serum <- read_csv("~/Desktop/serum.csv", col_types = cols(TP= col_integer(),
 
 
 library(mada)
+
 
 
 # Assuming your data has TP, FP, TN, FN columns
@@ -147,11 +148,17 @@ serum_anti1 <- serum %>%
 serum_anti_b <- serum %>%
   filter(antifungal == 1 | antifungal == 3)
 
+plotdata(serum, two.by.two = TRUE)
+
 plotdata(serum_anti0, two.by.two = TRUE)
 
 plotdata(serum_anti_b, two.by.two = TRUE)
 
 plotdata(serum_anti1, two.by.two = TRUE)
+
+serum_all <- metadiag(serum, two.by.two = TRUE, re = "normal", re.model = "DS",
+                               link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
+                               nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
 
 serum_noantifungal <- metadiag(serum_anti0, two.by.two = TRUE, re = "normal", re.model = "DS",
                      link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
@@ -164,12 +171,21 @@ serum_antifungalb <- metadiag(serum_anti_b, two.by.two = TRUE, re = "normal", re
                              link = "logit", sd.Fisher.rho = 1.7, nr.burnin = 1000,
                              nr.iterations = 10000, nr.chains = 4, r2jags = TRUE)
 
+plot(serum_all, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
 plot(serum_noantifungal, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
 plot(serum_antifungal, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
 plot(serum_antifungalb, level = c(0.5, 0.75, 0.95), parametric.smooth = TRUE)
+plotsesp(serum_all)
 plotsesp(serum_noantifungal)
 plotsesp(serum_antifungalb)
 plotsesp(serum_antifungal)
+
+bsroc(serum_all, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
+      fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
+      partial.AUC = FALSE)
+bsroc(serum_noantifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
+      fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
+      partial.AUC = FALSE)
 bsroc(serum_noantifungal, level = c(0.025, 0.5, 0.975), plot.post.bauc = TRUE,
       fpr.x = seq(0.01, 0.75, 0.01), lower.auc = 0.01, upper.auc = 0.75,
       partial.AUC = FALSE)
